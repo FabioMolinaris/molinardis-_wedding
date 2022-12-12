@@ -1,0 +1,57 @@
+version: "3"
+
+services:
+
+  nginx:
+    container_name: frontend
+    restart: unless-stopped
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - D:/SitoM/frontend:/usr/share/nginx/html/
+    networks:
+      rete:
+        ipv4_address: 172.21.0.4
+    ports:
+      - "8080:80"
+
+  nodejs:
+    container_name: backend
+    restart: unless-stopped
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - D:/SitoM/backend:/usr/app
+    networks:
+      rete:
+        ipv4_address: 172.21.0.2
+    ports:
+      - "3001:3001"
+
+  mysql:
+    container_name: db
+    restart: unless-stopped
+    build: 
+      context: ./mysql
+      dockerfile: Dockerfile
+    networks:
+      rete:
+        ipv4_address: 172.21.0.3
+    ports:
+      - "3306:3306"
+    env_file:
+      - ./mysql.env
+    volumes:
+      - database:/var/lib/mysql
+      - D:/SitoM/backupDB:/var/lib/backup
+
+networks:
+  rete:
+    ipam:
+      config:
+        - subnet: 172.21.0.0/24
+
+volumes:
+  database:
