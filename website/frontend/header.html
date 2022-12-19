@@ -1,36 +1,35 @@
-<nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">S&F</a>
+<nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-xxl">
+        <a class="navbar-brand" href="./index.html">
+            <span class="fw-bold text-secondary">
+                S&F
+            </span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="navbar-nav" id="btnSchedulazione">
-
-                <div class=" align-self-center col-auto">
-                    <div class="btn-group p-1" role="grpSchedulazione">
-                        <a class="nav-link btn btn-info" href="./cerimonia.html" onclick="clickCerimonia()">Cerimonia</a>
-                        <a class="nav-link btn btn-info" href="./ricevimento.html" onclick="clickRicevimento()">Ricevimento</a>
-                    </div>
-                </div>
-                <div class="py-1 align-self-center">
-                    <button type="button" id="btnRSVP" class="btn btn-info" onclick="clickRSVP()">RSVP</button>
-                    <button type="button" id="btnListaNozze" class="btn btn-success" onclick="clickListaNozze()">Lista
-                        nozze</button>
-                    <button type="button" id="btnScrivici" class="btn btn-success" data-bs-toggle="offcanvas"
-                        data-bs-target="#canvasScrivici" onclick="clickScrivici()">Scrivici</button>
-                    <div class="btn-group p-1" role="group">
-                        <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"></button>
-                        <ul class="dropdown-menu">
-                            <!--  <li><a class="dropdown-item" href="verificaDisponibilita.html">Verifica Disponibilità</a></li>  -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="collapse navbar-collapse justify-content-center align-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./cerimonia.html"">Cerimonia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./ricevimento.html">Ricevimento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="btnRSVP" class="btn btn-info">RSVP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="btnListaNozze" class="btn btn-success">Lista nozze</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="btnScrivici" class="btn btn-success"">Scrivici</a>
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="col-lg-2 col-12 float-right py-1 px-3">
+    <div class=" col-lg-2 col-12 float-right py-1 px-3">
         <input class="form-control" id="filtro" onkeyup="filtraTabella()" type="text" placeholder="...">
     </div>
 </nav>
