@@ -14,6 +14,7 @@ RUN npm install cors
 RUN npm install https
 RUN npm install http
 RUN npm install fs
+RUN npm install node-telegram-bot-api
 RUN npm install --global nodemon
 
 EXPOSE 3001
