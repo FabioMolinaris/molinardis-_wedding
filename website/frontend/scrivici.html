@@ -1,0 +1,17 @@
+<div class="p-2 my-2 container-xxl rounded text-center text-bg-dark">
+  <h2 class="fw-normal">Scrivici!</h2>
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="FormControlNome">Nome</label>
+        <textarea class="form-control" id="FormControlNome" rows="1"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="FormControlMessaggio">Il tuo messaggio per noi</label>
+        <textarea class="form-control" id="FormControlMessaggio" rows="20"></textarea>
+      </div>
+    </form>
+    <button type="button" class="btn btn-primary"
+      onclick="inviaMessaggio(document.getElementById('FormControlNome').value, document.getElementById('FormControlMessaggio').value,)">Invia</button>
+  </div>
+</div>

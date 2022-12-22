@@ -8,7 +8,7 @@ WORKDIR /usr/app/
 RUN npm update
 RUN npm fund
 RUN npm install dotenv
-RUN npm install express
+RUN npm install --save express
 RUN npm install mysql
 RUN npm install cors
 RUN npm install https
