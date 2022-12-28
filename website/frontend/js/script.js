@@ -1,10 +1,69 @@
 const API_HOST = 'http://localhost:3001';
 
+let theme;
+
 function loadHTML(pageName) {
     fetch(pageName)
         .then(response => response.text())
         .then(text => document.getElementById('container').innerHTML = text);
+
+    if (pageName == 'home.html')
+        getCountdown();
 };
+
+function changeTheme() {
+    let themeNumber = Math.floor(Math.random() * 4) + 1;
+    themeNumber = 4;
+
+    switch (themeNumber) {
+        case 1:
+            theme = 'theme-bologna';
+            break;
+        case 2:
+            theme = 'theme-bolzano';
+            break;
+        case 3:
+            theme = 'theme-calabria';
+            break;
+        case 4:
+            theme = 'theme-piemonte';
+            break;
+    }
+    localStorage.setItem('theme', theme);
+    document.documentElement.className = theme;
+}
+
+function getCountdown() {
+    console.log("conto alla rovescia");
+
+    let countDownDate = new Date("Feb 4, 2023 11:00:00").getTime();
+
+    // Update the count down every 1 second
+    let x = setInterval(function () {
+
+        // Get today's date and time
+        let now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        let distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+}
 
 function inviaMessaggio(nome, testo) {
     let messaggio = JSON.stringify({

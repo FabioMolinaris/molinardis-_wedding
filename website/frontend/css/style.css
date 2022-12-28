@@ -2,63 +2,37 @@ iframe[seamless] {
   border: none;
 }
 
-/* animazione scomparsa/apparizione navbar */
-nav {
-  transition: top 0.3s;
+.theme-bologna {
+  --color-background: #005c95;
+  --color-font: #000000;
 }
 
-/* scroll tabella */
-body {
-  overflow-y: overlay;
+.theme-bolzano {
+  --color-background: #f4d100;
+  --color-font: #000000;
 }
 
-#tabella {
-  overflow-x: auto;
+.theme-calabria {
+  --color-background: #0180ff;
+  --color-font: #000000;
 }
 
-/* modifica colori pulsanti bootstrap 5 come bootstrap 4 */
-.btn-info {
-  background-color: #0097A7 !important;
-  border-color: #0097A7 !important;
-  color: white !important;
+.theme-piemonte {
+  --color-background: #8c1c34;
+  --color-font: #ffffff;
 }
 
-.btn-info:hover,
-.btn-info:active,
-.btn-info:visited,
-.btn-info:focus {
-  background-color: #00838F !important;
-  border-color: #00838F !important;
+.themable {
+  background: var(--color-background);
 }
 
-.btn-outline-info {
-  border-color: #0097A7 !important;
-  color: #0097A7 !important;
-}
-
-.btn-outline-info:hover,
-.btn-outline-info:active,
-.btn-outline-info:visited,
-.btn-outline-info:focus {
-  background-color: #00838F !important;
-  border-color: #00838F !important;
-  color: white !important;
-}
-
-/* stile scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
+.themable h1,
+.themable h2,
+.themable h3,
+.themable h4,
+.themable h5,
+.themable h6,
+.themable p,
+.themable label {
+  color: var(--color-font);
 }
