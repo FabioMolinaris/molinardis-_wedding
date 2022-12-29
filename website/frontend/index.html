@@ -25,16 +25,12 @@
 <body onload="loadHTML('home.html')">
     <div class="mb-2">
         <nav id="navbar-nav" class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-xxl">
+            <div class="container-xl">
                 <a class="navbar-brand" href="#" onclick="loadHTML('home.html')">
                     <span class="fw-bold text-secondary">
                         S&F
                     </span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse justify-content-center align-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
@@ -44,26 +40,24 @@
                             <a class="nav-link" href="#" onclick="loadHTML('ricevimento.html')">Ricevimento</a>
                         </li>
                         <li class=" nav-item">
-                            <a class="nav-link" href="#" onclick="loadHTML('workInProgress.html')">Inviti</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadHTML('workInProgress.html')">RSVP</a>
+                            <a class="nav-link" href="#" onclick="loadHTML('inviti.html')">Inviti</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" onclick="loadHTML('lista_nozze.html')">Lista nozze</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="loadHTML('scrivici.html')">Scrivici</a>
+                            <a class="nav-link" href="#" onclick="loadHTML('scrivici.html')">Scrivici (RSVP)</a>
                         </li>
                     </ul>
                 </div>
-                <a class="nav navbar-nav navbar-right">
-                    <li><a href="#" onclick="changeTheme()"></a></li>
-                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
         </nav>
     </div>
-    <div id="container" class="container-xl"></div>
+    <div id="container" class="container-xl my-3"></div>
 
     <!-- toast di feedback -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">

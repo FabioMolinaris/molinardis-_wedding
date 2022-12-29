@@ -9,7 +9,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     volumes:
-      - ~/git-repo/molinardis-_wedding/website/frontend:/usr/share/nginx/html/
+      - /volume1/docker/molinardis-_wedding/website/frontend:/usr/share/nginx/html/
     networks:
       rete:
         ipv4_address: 172.21.0.4
@@ -23,7 +23,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     volumes:
-      - ~/git-repo/molinardis-_wedding/website/backend:/usr/app
+      - /volume1/docker/molinardis-_wedding/website/backend:/usr/app
     networks:
       rete:
         ipv4_address: 172.21.0.2
@@ -45,7 +45,7 @@ services:
       - ./mysql.env
     volumes:
       - database:/var/lib/mysql
-      - ~/git-repo/molinardis-_wedding/website/database:/var/lib/backup
+      - /volume1/docker/molinardis-_wedding/website/database:/var/lib/backup
 
 networks:
   rete:

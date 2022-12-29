@@ -3,22 +3,27 @@ iframe[seamless] {
 }
 
 .theme-bologna {
-  --color-background: #005c95;
-  --color-font: #000000;
+  --color-background: #b7410e;
+  --color-font: #ffffff;
 }
 
 .theme-bolzano {
-  --color-background: #f4d100;
-  --color-font: #000000;
+  --color-background: #31372b;
+  --color-font: #ffffff;
 }
 
 .theme-calabria {
-  --color-background: #0180ff;
-  --color-font: #000000;
+  --color-background: #0f1389;
+  --color-font: #ffffff;
 }
 
 .theme-piemonte {
-  --color-background: #8c1c34;
+  --color-background: #382224;
+  --color-font: #ffffff;
+}
+
+.theme-undefined {
+  --color-background: #d36e70;
   --color-font: #ffffff;
 }
 

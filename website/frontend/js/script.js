@@ -1,4 +1,4 @@
-const API_HOST = 'http://localhost:3001';
+const API_HOST = 'http://192.168.1.108:3001';
 
 let theme;
 
@@ -11,9 +11,9 @@ function loadHTML(pageName) {
         getCountdown();
 };
 
-function changeTheme() {
-    let themeNumber = Math.floor(Math.random() * 4) + 1;
-    themeNumber = 4;
+function changeTheme(themeNumber) {
+    if (themeNumber === undefined)
+        themeNumber = Math.floor(Math.random() * 5) + 1;
 
     switch (themeNumber) {
         case 1:
@@ -27,6 +27,9 @@ function changeTheme() {
             break;
         case 4:
             theme = 'theme-piemonte';
+            break;
+        case 5:
+            theme = 'theme-undefined';
             break;
     }
     localStorage.setItem('theme', theme);
