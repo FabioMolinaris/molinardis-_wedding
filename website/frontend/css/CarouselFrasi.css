@@ -13,7 +13,7 @@
 
 /* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 25rem;
+  height: 22rem;
   background-color: rgba(119, 119, 119, 0);
 }
 .carousel-item > img {

@@ -57,13 +57,13 @@ function getCountdown() {
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
+        document.getElementById("countdown").innerHTML = days + " giorni " + hours + " ore "
+            + minutes + " minuti " + seconds + " secondi ";
 
         // If the count down is finished, write some text
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("countdown").innerHTML = "EXPIRED";
+            document.getElementById("countdown").innerHTML = "IT'S HAPPENING";
         }
     }, 1000);
 }
