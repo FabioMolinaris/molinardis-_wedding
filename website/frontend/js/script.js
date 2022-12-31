@@ -1,7 +1,26 @@
 const API_HOST = 'http://192.168.1.108:3001';
-
 let theme;
 
+function nuovaVisita(){
+    let messaggio = JSON.stringify({
+        nome: "",
+        testo: ""
+    });
+    console.log(messaggio);
+    fetch(API_HOST + '/nuovaVisita/', {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: messaggio
+    }).then(response => Promise.resolve(response.text())
+        .then(dati => {
+            if (response.status != 200)
+                ;//toastFeedback("Problema!", dati, response.status);
+            else {
+                toastFeedback("Grazie di esserci!", "Ci fa molto piacere vederti qui 😃", "");
+            }
+        })
+    );
+}
 function loadHTML(pageName) {
     fetch(pageName)
         .then(response => response.text())
@@ -88,64 +107,6 @@ function inviaMessaggio(nome, testo) {
         })
     );
 }
-/*
-function inizializzazione() {
-    fetch(API_HOST + '/situazione')
-        .then(response => Promise.resolve(response.text())
-            .then(dati => {
-                if (response.status != 200)
-                    toastFeedback("Problema!", dati, response.status);
-                else loadSituazione(JSON.parse(dati));
-            })
-        );
-
-    fetch(API_HOST + '/produttori')
-        .then(response => Promise.resolve(response.text())
-            .then(dati => {
-                if (response.status != 200)
-                    toastFeedback("Problema!", dati, response.status);
-                else loadProduttori(JSON.parse(dati));
-            })
-        );
-
-    fetch(API_HOST + '/tipologie')
-        .then(response => Promise.resolve(response.text())
-            .then(dati => {
-                if (response.status != 200)
-                    toastFeedback("Problema!", dati, response.status);
-                else loadTipologie(JSON.parse(dati));
-            })
-        );
-
-    fetch(API_HOST + '/locazioni')
-        .then(response => Promise.resolve(response.text())
-            .then(dati => {
-                if (response.status != 200)
-                    toastFeedback("Problema!", dati, response.status);
-                else loadLocazioni(JSON.parse(dati));
-            })
-        );
-
-    navSituazione();
-}
-
-function clickConfermaEliminaArticolo(codice) {
-    fetch(API_HOST + '/articoli/' + encodeURIComponent(codice), {
-        method: "DELETE",
-        headers: { 'Content-Type': 'application/json' }
-    }).then(response => Promise.resolve(response.text())
-        .then(dati => {
-            if (response.status != 200)
-                toastFeedback("Problema!", dati, response.status);
-            else {
-                loadSituazione(JSON.parse(dati));
-                toastFeedback("Articolo eliminato", "Hai rimosso con successo l'articolo " + codice, 200);
-                document.getElementById("btnChiudiCanvasArticolo").click();
-            }
-        })
-    );
-}
-*/
 
 function toastFeedback(titolo, descrizione, status) {
     document.getElementById("titoloToast").textContent = " " + titolo;
