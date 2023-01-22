@@ -1,4 +1,4 @@
-const API_HOST = 'http://192.168.1.108:3001';
+const API_HOST = 'http://194.116.20.218:3001';
 let theme;
 
 function nuovaVisita(){
@@ -56,7 +56,7 @@ function changeTheme(themeNumber) {
 }
 
 function getCountdown() {
-    console.log("conto alla rovescia");
+    //console.log("conto alla rovescia");
 
     let countDownDate = new Date("Feb 4, 2023 11:00:00").getTime();
 
@@ -75,14 +75,22 @@ function getCountdown() {
         let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display the result in the element with id="demo"
         document.getElementById("countdown").innerHTML = days + " giorni " + hours + " ore "
             + minutes + " minuti " + seconds + " secondi ";
 
-        // If the count down is finished, write some text
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("countdown").innerHTML = "IT'S HAPPENING";
+        if (distance < 0 && days == -1) {
+            document.getElementById("titolo").innerHTML = "Molinardis' wedding is here to stay!";
+            document.getElementById("sottotitolo").innerHTML = "È il 4 febbraio e ci sposiamo!!";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("photobook-whatsapp").style.display = "";
+            document.getElementById("perche").style.display = "none";
+        }
+        if (distance < 0 && days < -1) {
+            document.getElementById("titolo").innerHTML = "Molinardis' wedding is here to stay!";
+            document.getElementById("sottotitolo").style.display = "none";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("photobook-whatsapp").style.display = "";
+            document.getElementById("perche").style.display = "none";
         }
     }, 1000);
 }
