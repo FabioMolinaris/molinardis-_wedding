@@ -12,7 +12,8 @@ let db = mysql.createPool({
    user: 'root',
    password: 'Bcnxmz09@',
    host: '172.21.0.3',
-   database: 'molinardis'
+   database: 'molinardis',
+   charset: 'utf8mb4_unicode_ci'
 })
 
 app.use(cors());
